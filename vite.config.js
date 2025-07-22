@@ -8,7 +8,7 @@ export default defineConfig({
     // PWA temporär deaktiviert wegen workbox-build Fehler
     // VitePWA({...})
   ],
-  base: '/validate_wasm/',
+  base: './',
   server: {
     headers: {
       'Cross-Origin-Embedder-Policy': 'require-corp',
@@ -17,6 +17,8 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
+    outDir: 'dist',
+    assetsDir: 'assets',
     rollupOptions: {
       output: {
         manualChunks: {
